@@ -15,6 +15,7 @@ To test the API it uses RestAssured.
 
 The purpose of this framework is for performance testing and backend testing, it can be used on jenkins.
 
+For testng, it can be run parallel, you can setting the ThreadCount,ThreadDataPorviderCount, and parallelType in src/main/java/resources/configuration/testNGConfig.properties.
 
 
 Dependencies :
