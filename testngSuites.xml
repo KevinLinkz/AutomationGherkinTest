@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Technical Test Suite" parallel="classes" thread-count="3" data-provider-thread-count="3">
+    <listeners>
+        <listener class-name="com.framework.listeners.SuitesListener"></listener>
+    </listeners>
+    <suite-files>
+        <suite-file path="testngGherkin.xml"></suite-file>
+        <suite-file path="testngAPI.xml"></suite-file>
+    </suite-files>
+</suite>

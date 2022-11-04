@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central.maven.org" />
+      <option name="name" value="central.maven.org" />
+      <option name="url" value="http://bcaartifactory:8080/artifactory/list/central.maven.org/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="http://bcaartifactory:8080/artifactory/list/RepositoryDevOps/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jcenter.bintray.com" />
+      <option name="name" value="jcenter.bintray.com" />
+      <option name="url" value="http://bcaartifactory:8080/artifactory/list/jcenter.bintray.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="repo1.maven.org" />
+      <option name="name" value="repo1.maven.org" />
+      <option name="url" value="http://bcaartifactory:8080/artifactory/list/Repo1Maven/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="repo2.maven.org" />
+      <option name="name" value="repo2.maven.org" />
+      <option name="url" value="http://bcaartifactory:8080/artifactory/list/Repo2Maven/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="BCAREPOSITORY" />
+      <option name="name" value="BCAREPOSITORY" />
+      <option name="url" value="http://bcaartifactory:8080/artifactory/list/libs-release-local/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="repo.jenkins-ci.org-public-cache" />
+      <option name="name" value="repo.jenkins-ci.org-public-cache" />
+      <option name="url" value="http://bcaartifactory:8080/artifactory/list/repo.jenkins-ci.org-public-cache/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="packages.confluent.io" />
+      <option name="name" value="packages.confluent.io" />
+      <option name="url" value="http://bcaartifactory:8080/artifactory/list/packages.confluent.io/" />
+    </remote-repository>
+  </component>
+</project>
