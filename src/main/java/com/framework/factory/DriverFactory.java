@@ -3,8 +3,6 @@ package com.framework.factory;
 import com.aventstack.extentreports.Status;
 import com.framework.services.PropertiesService;
 import com.framework.services.ScreenshotService;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

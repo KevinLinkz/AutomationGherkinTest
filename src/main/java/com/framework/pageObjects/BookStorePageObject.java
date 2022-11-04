@@ -4,14 +4,14 @@ import com.aventstack.extentreports.Status;
 import com.framework.baseFunctions.AssertFunction;
 import com.framework.baseFunctions.BaseFunction;
 import com.framework.services.ScreenshotService;
-import org.apache.commons.collections4.map.HashedMap;
 import org.openqa.selenium.By;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class BookStorePageObject {
     public BookStorePageObject() {
-        mapSaveData.set(new HashedMap<>());
+        mapSaveData.set(new HashMap<>());
     }
     By byTxtBoxSearch = By.id("searchBox");
     By byAlert = By.xpath("//*[@id=\"app\"]//div[.=\"No rows found\"]");

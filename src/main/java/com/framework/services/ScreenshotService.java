@@ -1,15 +1,9 @@
 package com.framework.services;
 
-import com.assertthat.selenium_shutterbug.core.Shutterbug;
-import com.assertthat.selenium_shutterbug.utils.web.ScrollStrategy;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.framework.factory.DriverFactory;
 import com.framework.factory.ExtentReportsFactory;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
@@ -50,60 +44,6 @@ public class ScreenshotService {
         trdIntCounterData.set(intCounterData);
     }
 
-    /**
-     * Screenshot use ShutterBug for screenshot full page
-     * @return path the screenShot
-     */
-    public synchronized String screenShotFullPage() {
-        String strDefaultPath = System.getProperty("user.dir") + "\\Screenshot\\";
-        initFolderDefault(strDefaultPath);
-//        strFileName = strFileName + "_" + getCounterData();
-        String strFileName = MyConfig.sdf.format(new Date());
-        String strFullPath = strDefaultPath + strFileName + ".png";
-
-        Shutterbug.shootPage(DriverFactory.init().get(), ScrollStrategy.WHOLE_PAGE, 500).withName(strFileName).save(strDefaultPath);
-
-        putIntoReport(strFullPath);
-
-//        setCounterdata(getCounterData() + 1);
-        return strDefaultPath;
-
-    }
-
-    /**
-     * Swipeup and screenshot 2x
-     * temporary code, still need to updating
-     */
-    public synchronized String screenShotFullViewMobile(){
-        String strDefaultPath = System.getProperty("user.dir") + "\\Screenshot\\";
-        initFolderDefault(strDefaultPath);
-        String strFileName = MyConfig.sdf.format(new Date());
-        String strFullPath = strDefaultPath + strFileName + ".png";
-
-        Dimension mobileDimension = DriverFactory.init().get().manage().window().getSize();
-
-        int intHeight = mobileDimension.height;
-        int intWidth = mobileDimension.width;
-        int startSwipeUp = intHeight * 3 / 4;
-        int endSwipeeUp = intHeight / 4;
-        int middlePoint_X = intWidth / 2;
-        TouchAction actionSwipeUP = new TouchAction((AndroidDriver) DriverFactory.init().get());
-        int elementExist = 1;
-
-        while (elementExist < 3) {
-            Shutterbug.shootPage(DriverFactory.init().get(), ScrollStrategy.VIEWPORT_ONLY, 500).withName(strFileName).save(strDefaultPath);
-            putIntoReportMobile(strFullPath, elementExist);
-
-            actionSwipeUP.press(PointOption.point(middlePoint_X, startSwipeUp))
-                    .waitAction(new WaitOptions().withDuration(Duration.ofMillis(2500))) //you can change wait durations as per your requirement
-                    .moveTo(PointOption.point(middlePoint_X, endSwipeeUp))
-                    .release()
-                    .perform();
-            elementExist++;
-        }
-
-        return strDefaultPath;
-    }
 
     /**
      * Screenshot use WebDriver.TakeScreenshot
