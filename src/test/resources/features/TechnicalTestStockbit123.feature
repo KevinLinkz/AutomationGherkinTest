@@ -1,5 +1,6 @@
 Feature: Technical Test Stockbit
 
+  @smoke
   Scenario Outline: Test1(Select Menu)
     Given User go to "<url>"
     When User in "<menu>" page
@@ -13,7 +14,7 @@ Feature: Technical Test Stockbit
       | url                              | menu          | selectValue         | selectOne | selectOldStyle |
       | https://demoqa.com/select-menu   | Select Menu   | Another root option | Other     | Aqua           |
 
-
+  @smoke
   Scenario Outline: Test2(Search Books No Row Found)
     Given User go to "<url>"
     When User in "<menu>" page

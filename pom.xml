@@ -40,6 +40,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <properties>
                         <property>
                             <name>dataproviderthreadcount</name>
@@ -49,11 +50,38 @@
                     <threadCount>${threadCount}</threadCount>
                     <parallel>${parallelType}</parallel>
                     <suiteXmlFiles>
+<!--                        <suiteXmlFile>testngGherkin.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>testngApi.xml</suiteXmlFile>-->
                         <suiteXmlFile>testngSuites.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.6.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>cucumberReporting</projectName>
+                            <skip>false</skip>
+                            <outputDirectory>target/HtmlReport</outputDirectory>
+                            <inputDirectory>target/HtmlReport</inputDirectory>
+                            <jsonFiles>
+                                <param>**/*.json</param>
+                            </jsonFiles>
+                            <mergeFeaturesById>false</mergeFeaturesById>
+                            <mergeFeaturesWithRetest>false</mergeFeaturesWithRetest>
+                            <checkBuildResult>false</checkBuildResult>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -103,6 +131,15 @@
             <artifactId>selenium-java</artifactId>
             <version>4.1.0</version>
         </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.7.2</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -116,6 +153,25 @@
             <artifactId>cucumber-testng</artifactId>
             <version>7.4.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.7.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>cucumber-java</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>cucumber-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+
 
 
 
