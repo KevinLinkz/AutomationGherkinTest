@@ -33,7 +33,7 @@ public class TechnicalTestStockbitRunner123 extends AbstractTestNGCucumberTests 
     }
     @AfterStep
     public void screenshot(Scenario scenario){
-        if(scenario.getStatus().toString().equalsIgnoreCase("failed")){
+        if(scenario.isFailed()){
             final byte[] screenshot = ((TakesScreenshot) DriverFactory.init().get()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png","image");
         }
