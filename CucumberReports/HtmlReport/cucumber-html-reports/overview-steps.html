@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>cucumberReporting</td>
+        <td>1</td>
+      <td>05 Nov 2022, 15:05</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.User_see_detail_book(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1348833700">1.348</td>
+              <td class="duration" data-value="1348833700">1.348</td>
+              <td class="duration" data-value="1348833700">1.348</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_choose_multi_select_drop_down_all_color()</td>
+              <td>1</td>
+              <td class="duration" data-value="1353412800">1.353</td>
+              <td class="duration" data-value="1353412800">1.353</td>
+              <td class="duration" data-value="1353412800">1.353</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_choose_old_style_select_menu(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1363649900">1.363</td>
+              <td class="duration" data-value="1363649900">1.363</td>
+              <td class="duration" data-value="1363649900">1.363</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_choose_select_one(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2685551300">2.685</td>
+              <td class="duration" data-value="2685551300">2.685</td>
+              <td class="duration" data-value="2685551300">2.685</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_choose_select_value(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2749592000">2.749</td>
+              <td class="duration" data-value="2749592000">2.749</td>
+              <td class="duration" data-value="2749592000">2.749</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_click_book(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2024490200">2.024</td>
+              <td class="duration" data-value="2024490200">2.024</td>
+              <td class="duration" data-value="2024490200">2.024</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_go_to(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="5504404166">5.504</td>
+              <td class="duration" data-value="5504404166">5.611</td>
+              <td class="duration" data-value="16513212500">16.513</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_in_page(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="1608554533">1.608</td>
+              <td class="duration" data-value="1608554533">2.067</td>
+              <td class="duration" data-value="4825663600">4.825</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_search_book(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="2035241900">2.035</td>
+              <td class="duration" data-value="2035241900">2.710</td>
+              <td class="duration" data-value="4070483800">4.070</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_see(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1330353200">1.330</td>
+              <td class="duration" data-value="1330353200">1.330</td>
+              <td class="duration" data-value="1330353200">1.330</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Test.Gherkins.StepDefinitions.TechnicalTestStockbitStepDefinition123.user_success_input_all_select_menu()</td>
+              <td>1</td>
+              <td class="duration" data-value="682577300">0.682</td>
+              <td class="duration" data-value="682577300">0.682</td>
+              <td class="duration" data-value="682577300">0.682</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>11</td>
+            <td>16</td>
+            <td class="duration">2.434</td>
+            <td class="duration">16.513</td>
+            <td class="duration">38.947</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

@@ -70,8 +70,8 @@
                         <configuration>
                             <projectName>cucumberReporting</projectName>
                             <skip>false</skip>
-                            <outputDirectory>target/HtmlReport</outputDirectory>
-                            <inputDirectory>target/HtmlReport</inputDirectory>
+                            <outputDirectory>CucumberReports/HtmlReport</outputDirectory>
+                            <inputDirectory>CucumberReports/HtmlReport</inputDirectory>
                             <jsonFiles>
                                 <param>**/*.json</param>
                             </jsonFiles>
